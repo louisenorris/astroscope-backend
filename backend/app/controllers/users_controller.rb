@@ -1,11 +1,17 @@
 class UsersController < ApplicationController
 
     def create
-        user = User.create(user_params)
+        user = User.new(user_params)
+        user.starsign = (Starsign.all.find{|starsign| starsign.name == user.zodiac_sign})
+
+        # how to assign the star sign
+        # user.errors.full_messages
+        user.save
+        # byebug
         if user.valid?
             render json: { user: UserSerializer.new(user) }, status: :created
         else 
-            render json: { errors: user.errors.full_messages }, status: not_accepted
+            render json: { errors: user.errors.full_messages }, status: :not_accepted
         end
     end
 
