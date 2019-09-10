@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_09_09_124355) do
     t.datetime "updated_at", null: false
     t.index ["starsign_id"], name: "index_horoscopes_on_starsign_id"
   end
+  
 
   create_table "starsigns", force: :cascade do |t|
     t.string "name"
