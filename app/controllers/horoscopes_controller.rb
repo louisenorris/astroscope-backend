@@ -13,5 +13,14 @@ class HoroscopesController < ApplicationController
     #     render ({json: { horoscope: HoroscopeSerializer.new(horoscope) }})
     # end
 
+    def index
+        horoscopes = Horoscope.all
+        render json: horoscopes
+    end
+
+    # def show
+    #     starsign = Starsign.find(params[:id])
+    #     render ({ json: { starsign: HoroscopeSerializer.new(starsign) } })
+    # end
     
 end
