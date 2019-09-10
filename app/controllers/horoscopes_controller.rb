@@ -8,10 +8,10 @@ class HoroscopesController < ApplicationController
     #     horoscope.save
     # end
 
-    # def show  
-    #     horoscope = Horoscope.find(params[:id])
-    #     render ({json: { horoscope: HoroscopeSerializer.new(horoscope) }})
-    # end
+    def show  
+        horoscope = Horoscope.find(params[:id])
+        render ({json: { horoscope: HoroscopeSerializer.new(horoscope) }})
+    end
 
     def index
         horoscopes = Horoscope.all
