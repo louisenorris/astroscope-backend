@@ -5,10 +5,10 @@ class StarsignsController < ApplicationController
         render json: starsigns
     end
 
-    def show  
-        starsign = Starsign.find(params[:id])
-        render ({json: { starsign: StarsignSerializer.new(starsign) }})
-    end
+    # def show  
+    #     starsign = Starsign.find(params[:id])
+    #     render ({json: { starsign: StarsignSerializer.new(starsign) }})
+    # end
 
   
 

@@ -1,3 +1,3 @@
 class HoroscopeSerializer < ActiveModel::Serializer
-  attributes :id, :content
+  attributes :id, :content, :starsign_id, :date 
 end

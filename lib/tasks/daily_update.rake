@@ -12,7 +12,7 @@ task fetch_dayly_updates: [:environment] do
         prediction = Api.daily_horoscope_starsign(name)
         # byebug
         sign = Starsign.find_by(name: name)
-        Horoscope.create(content: prediction["horoscope"], starsign: sign)
+        Horoscope.create(content: prediction["horoscope"], starsign: sign, date: prediction["date"])
         puts "Created #{name} horoscope"
     }
 end
