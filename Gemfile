@@ -51,3 +51,5 @@ gem 'zodiac'
 gem "jwt", "~> 2.2"
 
 gem "http"
+
+gem 'sidekiq', '~> 6.0'
