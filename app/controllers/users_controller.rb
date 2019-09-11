@@ -2,6 +2,14 @@ class UsersController < ApplicationController
 
     # skip_before_action :set_current_user, only: [:create]
 
+
+    def index
+        users = User.all
+        render json: users
+    end
+
+
+
     def create
         user = User.new(user_params)
         user.starsign = (Starsign.all.find{|starsign| starsign.name == user.zodiac_sign})
@@ -22,7 +30,12 @@ class UsersController < ApplicationController
     end
 
     # def update
-        
+    #     user = User.new
+    #   if user.update(user_params)
+    #     render json: { user: UserSerializer.new(user), token: encode_token({ user_id: user.id }) }, status: :created
+    #   else
+    #     render json: { errors: user.errors.full_messages }, status: :not_accepted
+    #   end
     # end
 
     # def destroy
