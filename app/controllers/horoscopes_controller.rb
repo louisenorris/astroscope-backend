@@ -18,6 +18,11 @@ class HoroscopesController < ApplicationController
         render json: horoscopes
     end
 
+
+    def today_horoscope
+        horoscopes = Horoscope.all.filter{|h| h.date == Date.today}
+        render json: horoscopes
+    end
     # def show
     #     starsign = Starsign.find(params[:id])
     #     render ({ json: { starsign: HoroscopeSerializer.new(starsign) } })

@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :horoscopes, only: [:index, :show]
   post '/login', to: 'auth#create' 
   get '/validate', to: 'auth#validate_token'
+  get '/today', to: 'horoscopes#today_horoscope'
+
 
 end
